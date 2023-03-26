@@ -4,6 +4,7 @@ package Krabs.Amigos.dao;
 
 import Krabs.Amigos.model.Person;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface PersonDao { // DAO - data access object
@@ -14,4 +15,8 @@ public interface PersonDao { // DAO - data access object
         UUID id = UUID.randomUUID();
         return insertPerson(id, person);
     }
+
+    List<Person> selectAllPeople();
+
+
 }
