@@ -8,10 +8,14 @@ public class Person {
     private final UUID id;
     private final String name;
 
+    private final String address;
+
     public Person(@JsonProperty("id") UUID id,
-                  @JsonProperty("name") String name) {
+                  @JsonProperty("name") String name,
+                  @JsonProperty("address") String address) {
         this.id = id;
         this.name = name;
+        this.address = address;
     }
 
     public UUID getId() {
@@ -21,4 +25,8 @@ public class Person {
     public String getName() {
         return name;
     } //comment
+
+    public String getAddress() {
+        return address;
+    }
 }

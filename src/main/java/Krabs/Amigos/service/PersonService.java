@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service // arba @Component
 public class PersonService {
@@ -19,13 +21,18 @@ public class PersonService {
         this.personDao = personDao;
     }
 
-   @PostMapping// kai nebuvo irgi veike
+   @PostMapping// kai nebuvo irgi veike, CIA priskiria random ID personui. POST
     public int addPerson(Person person) {
         return personDao.insertPerson(person);
     }
 
-    @GetMapping
+    @GetMapping  // GET
     public List<Person> getAllPeople() {
         return personDao.selectAllPeople();
     }
+
+    public Optional<Person> getPersonById(UUID id) {
+        return personDao.selectPersonById(id);
+    }
+
 }
