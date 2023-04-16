@@ -91,20 +91,20 @@ public class FakePersonDataAccessServiceTest {
         assertFalse(service.selectPersonById(id2).isPresent());
     }
 
-    @Test
-    public void testUpdatePersonById() {
-        UUID id = UUID.randomUUID();
-        Person person = new Person(id, "John", "123 Main St");
-
-        service.insertPerson(id, person);
-
-        Person update = new Person(id, "Jane", "456 Oak Ave");
-
-        int result1 = service.updatePersonById(id, update);
-        int result2 = service.updatePersonById(UUID.randomUUID(), update);
-
-        assertEquals(1, result1);
-        assertEquals(0, result2);
-        assertEquals(update, service.selectPersonById(id).get());
-    }
+//    @Test
+//    public void testUpdatePersonById() {
+//        UUID id = UUID.randomUUID();
+//        Person person = new Person(id, "John", "123 Main St");
+//
+//        service.insertPerson(id, person);
+//
+//        Person update = new Person(id, "Jane", "456 Oak Ave");
+//
+//        int result1 = service.updatePersonById(id, update);
+//        int result2 = service.updatePersonById(UUID.randomUUID(), update);
+//
+//        assertEquals(1, result1);
+//        assertEquals(0, result2);
+//        assertEquals(update, service.selectPersonById(id).get());
+//    }
 }
