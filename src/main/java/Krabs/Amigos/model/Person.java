@@ -2,12 +2,15 @@ package Krabs.Amigos.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
+//@JsonIgnoreProperties({"address"})
 public class Person {
     private final UUID id;
+    @NotBlank
     private final String name;
-
+    @NotBlank
     private final String address;
 
     public Person(@JsonProperty("id") UUID id,
